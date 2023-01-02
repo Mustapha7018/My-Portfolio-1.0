@@ -50,11 +50,6 @@
 
 /* General Styles */
 
-:focus {
-  outline: 3px solid var(--clr--accent);
-  outline-offset: 3px;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -153,6 +148,7 @@ html {
   width: 300px;
   text-align: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .shape {
@@ -184,8 +180,13 @@ html {
 
 .about__section {
   padding: 5rem;
-  margin: 0 auto;
   background-color: var(--clr-light);
+}
+
+.about-container {
+  margin: 0 auto;
+  place-content: center;
+  max-width: 1200px;
 }
 
 .about-title {
@@ -236,12 +237,13 @@ html {
 .buttons #button2 {
   color: white;
   background-color: black;
+  word-wrap: nowrap;
 }
 
 /* SERVICES SECTION */
 
 .service__section {
-  padding: 5rem;
+  padding: 5rem 5rem 7rem 5rem;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -255,7 +257,8 @@ html {
 
 .services-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2em;
   margin: 0 auto;
 }
@@ -382,4 +385,12 @@ html {
   .marquee::after {
     width: 5rem;
   }
+}
+
+/* PORTFOLIO SECTION */
+
+.project__section {
+  padding: 5rem 5rem 7rem 5rem;
+  max-width: 1300px;
+  margin: 0 auto;
 }
