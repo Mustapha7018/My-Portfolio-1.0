@@ -23,18 +23,29 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&family=Rajdhani:wght@500;600&family=Roboto:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=DM+Serif+Display&family=Prata&display=swap" rel="stylesheet">
 
     <title>Mustapha Adams</title>
   </head>
   <body>
     <!-- ===== HEADER ===== -->
-    <header class="header">
-      <nav class="nav">
-        <div class="image-container">
-          <img class="logo" src="/icons/brand-logo.png" alt="logo image" />
-        </div>
+    <header class="primary-header">
+      <button
+      class="mobile-nav-toggle"
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+      >
+      <span class="sr-only"></span>
+    </button>
+    
+    <nav class="nav">
+        <div class="logo"><a href="#">M. Adams</a></div>
         <div class="nav-links">
-          <ul class="nav__list">
+          <ul id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation">
             <li><a href="#about"></a>About.</li>
             <li><a href="#services"></a>Services.</li>
             <li><a href="#work"></a>Work.</li>
@@ -47,9 +58,6 @@
           <a href=""><i class="fa-brands fa-twitter"></i></a>
           <a href=""><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <!-- <button class="nav-toggle" aria-label="toggle-navigation">
-          <span class="hamburger"></span>
-        </button> -->
       </nav>
     </header>
 
@@ -169,8 +177,7 @@
        </div>
       </section>
       <!-- ===== PROJECTS ===== -->
-      <section class="project__section"></section>
-
+      
 
       <!-- ===== CONTACT ME ===== -->
     </main>

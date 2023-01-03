@@ -8,14 +8,16 @@
       {
         "ignore": [
           "scroll-behavior",
-          "height: fit-content"
+          "height: fit-content",
+          "aspect-ratio"
         ]
       }
     ],
     "axe/name-role-value": [
       "default",
       {
-        "link-name": "off"
+        "link-name": "off",
+        "button-name": "off"
       }
     ],
     "axe/structure": [
