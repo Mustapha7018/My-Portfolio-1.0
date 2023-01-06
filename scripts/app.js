@@ -17,6 +17,7 @@ navToggle.addEventListener('click', () => {
     }
 });
 
+
 // Marquee section
 const root = document.documentElement;
 const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
