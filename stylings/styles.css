@@ -97,7 +97,7 @@ body {
   transition: color 0.35s;
 }
 
-.primary-navigation li:hover,
+.primary-navigation li a:hover,
 .nav__icons a:hover {
   color: var(--clr-accent-1);
 }
@@ -110,7 +110,8 @@ body {
   margin: 0;
 }
 
-.primary-navigation li {
+.primary-navigation li a{
+  text-decoration: none;
   color: var(--clr-light);
   transition: color 0.35s;
   font-family: var(--ff-secondary);
