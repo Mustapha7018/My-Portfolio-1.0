@@ -149,6 +149,11 @@ body {
     transform: translateX(0%);
   }
 
+  .primary-navigation a.active {
+    color: white;
+    background-color: black;
+}
+
   .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -264,6 +269,7 @@ body {
 .about__section {
   padding: 5rem;
   background-color: var(--clr-light);
+  scroll-margin-top: 80px;
 }
 
 .about-container {
@@ -302,7 +308,7 @@ body {
   margin-top: 40px;
 }
 
-.big-l {
+.big-s {
   font-size: var(--fs-h2);
   font-family: var(--ff-primary-1);
   font-weight: var(--fw-reg);
@@ -317,16 +323,76 @@ body {
   color: inherit;
 }
 
-.buttons #button2 {
-  color: white;
-  background-color: black;
-  word-wrap: nowrap;
+.buttons {
+  display: flex;
+  justify-content: center;
 }
+
+.button {
+  display: block;
+  padding: 10px;
+  background-color: var(--clr-light);
+  color: black;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+#cv-btn {
+  border-right: 2px solid black;
+}
+
+#view-btn {
+  border-left: 2px solid black;
+  background-color: black;
+  color: white;
+}
+
+/* About section media queries */
+
+@media only screen and (max-width: 897px) {
+  .about__section {
+    padding: 2rem;
+  }
+
+  .about-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-image img {
+    height: auto;
+    width: 100%;
+  }
+
+  .about-info > .about-text {
+    margin-bottom: 3rem;
+  }
+
+  .about-info > .buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-title {
+    font-size: var(--fs-h3);
+  }
+}
+
+
+
 
 /* SERVICES SECTION */
 
 .service__section {
   padding: 5rem 5rem 7rem 5rem;
+  scroll-margin-top: 80px;
   max-width: 1300px;
   margin: 0 auto;
 }
@@ -380,6 +446,25 @@ body {
   visibility: visible;
   opacity: 1;
 }
+
+@media screen and (max-width: 1309px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .services-container {
+    grid-template-columns: repeat(1, minmax(250px, 100%));
+  }
+}
+
+
 
 /* SKILLSET SECTION */
 
@@ -487,9 +572,8 @@ body {
   height: 900px;
 }
 
-.item .item-1 {
-  grid-column: 1 / 3;
-}
 
-.item .item-4 {
-}
+
+
+
+
