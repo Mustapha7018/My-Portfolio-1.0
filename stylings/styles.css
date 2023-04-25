@@ -26,7 +26,7 @@
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.5rem;
-  --fs-body: 1.2rem;
+  --fs-body: 1.3rem;
 
   --marquee-width: 1150px;
   --marquee-height: 20vh;
@@ -198,6 +198,7 @@ body {
   line-height: 30px;
   background-color: var(--clr-dark);
   /* position: relative; */
+  height: 100vh;
 }
 
 .hero-text {
@@ -494,7 +495,6 @@ body {
 /* SKILLSET SECTION */
 
 .skillset__section {
-  /* background: url(/images/skills-background-4.svg); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -519,16 +519,6 @@ body {
   content: "";
   z-index: 1;
 }
-/* 
-.marquee:before {
-  left: 0;
-  background: linear-gradient(to right, #111 0%, transparent 100%);
-}
-
-.marquee:after {
-  right: 0;
-  background: linear-gradient(to left, #111 0%, transparent 100%);
-} */
 
 .marquee-content {
   list-style: none;
@@ -580,25 +570,80 @@ body {
   }
 }
 
-/* PORTFOLIO SECTION */
+/* WORK SECTION */
+.work__section {
+  padding: 80px 0;
+  scroll-margin-top: 80px;
+}
 
-.project__section {
-  padding: 5rem 5rem 7rem 5rem;
-  max-width: 1300px;
+/* Work Container */
+.work-container {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-.portfolio-items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 270px;
-  grid-gap: 2rem;
-  position: relative;
-  height: 900px;
+/* Work Header */
+.work-header {
+  text-align: center;
+  margin-bottom: 80px;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h2);
 }
 
+.work-header p {
+  font-size: 24px;
+  color: #888;
+}
 
+/* Work Grid */
+.work-grid {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(4, 275px);
+  grid-template-rows: 280px 280px 275px;
+  grid-gap: 20px;
+}
 
+/* Work Item */
+.work-item {
+  position: relative;
+  overflow: hidden;
+}
 
+.work-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
+.work-item-big {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+  /* height: 750px; */
+}
+
+.work-item-long {
+  grid-row: 3 ;
+  grid-column: 3 / span 2;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 40px;
+  }
+
+  .work-item-big,
+  .work-item-long {
+    height: auto;
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .work-item-small {
+    height: auto;
+  }
+}
 
