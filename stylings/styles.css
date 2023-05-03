@@ -39,6 +39,7 @@
 
 /* MEDIA QUERIES */
 
+
 /* General Styles */
 
 html {
@@ -184,36 +185,24 @@ body {
 
 /* HERO SECTION */
 .hero__section {
-  padding: 0 4rem;
-  background-color: var(--clr-dark);
-}
-
-.hero-container {
-  width: 90%;
-  max-width: 900px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 2rem 0 2rem;
-  line-height: 30px;
-  background-color: var(--clr-dark);
-  /* position: relative; */
   height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 0 10%;
+  background-color: var(--clr-dark);
 }
 
-.hero-text {
-  margin-left: 4em;
-}
-
-.hero-text h1 {
+.hero-container h1 {
   font-family: var(--ff-primary-2);
   font-size: var(--fs-h1);
   font-weight: var(--fw-bold);
   color: var(--clr-accent-1);
-  margin-bottom: 1em;
+  margin-bottom: 1em;  
+  line-height: 1.5;
 }
 
-.hero-text > p {
+.hero-container > p {
   font-family: var(--ff-secondary);
   font-size: var(--fs-h3);
   color: var(--clr-light);
@@ -221,7 +210,8 @@ body {
 }
 
 .my-image {
-  width: 600px;
+  width: 50vw;
+  height: 100vh;
   object-fit: cover;
   vertical-align: bottom;
   transform: rotateY(180deg);
@@ -578,7 +568,7 @@ body {
 
 /* Work Container */
 .work-container {
-  max-width: 1200px;
+  max-width: 1150px;
   margin: 0 auto;
 }
 
@@ -627,23 +617,68 @@ body {
   grid-column: 3 / span 2;
 }
 
-/* Responsive */
-@media (max-width: 767px) {
+
+@media (max-width: 1249px) {
   .work-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    grid-gap: 40px;
   }
 
-  .work-item-big,
-  .work-item-long {
-    height: auto;
+  .work-item-big {
     grid-row: auto;
     grid-column: auto;
   }
 
-  .work-item-small {
-    height: auto;
+  .work-item-long {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .work-item .work-item-small .small img {
+    height: 580px;
+    width: 570px;
+
   }
 }
 
+
+/* CONTACT SECTION */
+#contact {
+  background-color: #F3F1EF;
+  padding: 5rem 5rem 7rem 5rem;
+  scroll-margin-top: 80px;
+  margin: 0 auto;
+}
+
+.contact-container h1 {
+  font-size: 3rem;
+  font-family: var(--ff-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding-bottom: 1.5rem;
+}
+
+.contact-info ul li {
+  margin-bottom: 2rem;
+}
+
+.social-media li {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.social-media li i {
+  color: #0b0b0b;
+}

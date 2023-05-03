@@ -88,24 +88,24 @@ for (let i = 0; i < marqueeElementsDisplayed; i++) {
 }
 
 // IntersectionObserver
-// const observer = new IntersectionObserver(entries => {
-//     entries.forEach(entry => {
-//         const id = entry.target.getAttribute('id');
-//         const menuItem = document.querySelector(`.primary-navigation a[href="#${id}"]`);
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        const menuItem = document.querySelector(`.primary-navigation a[href="#${id}"]`);
 
-//         if (entry.isIntersecting) {
-//             menuItem.classList.add('active'); 
-//         } else {
-//             menuItem.classList.remove('active'); 
-//         }
-//     });
-// });
+        if (entry.isIntersecting) {
+            menuItem.classList.add('active'); 
+        } else {
+            menuItem.classList.remove('active'); 
+        }
+    });
+});
 
-// //observe each section in the document
-// const sections = document.querySelectorAll('section');
+//observe each section in the document
+const sections = document.querySelectorAll('section');
 
-// sections.forEach(section => {
-//     observer.observe(section);
-// });
+sections.forEach(section => {
+    observer.observe(section);
+}); 
 
 
