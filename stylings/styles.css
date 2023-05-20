@@ -23,6 +23,7 @@
   --clr-accent-2: #e5a25c;
   --clr-accent-3: #e94d37;
 
+  --fs-hero: 5rem;
   --fs-h1: 3rem;
   --fs-h2: 2.25rem;
   --fs-h3: 1.5rem;
@@ -183,6 +184,8 @@ body {
   }
 }
 
+
+
 /* HERO SECTION */
 .hero__section {
   height: 100vh;
@@ -193,20 +196,20 @@ body {
   background-color: var(--clr-dark);
 }
 
-.hero-container h1 {
+.hero-text h1 {
   font-family: var(--ff-primary-2);
-  font-size: var(--fs-h1);
+  font-size: var(--fs-hero);
   font-weight: var(--fw-bold);
   color: var(--clr-accent-1);
   margin-bottom: 1em;  
   line-height: 1.5;
 }
 
-.hero-container > p {
+.hero-text > p {
   font-family: var(--ff-secondary);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
   color: var(--clr-light);
-  width: 350px;
+  width: 500px;
 }
 
 .my-image {
@@ -253,6 +256,14 @@ body {
   stroke-width: 3px;
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
+}
+
+/* Media queries */
+@media (max-width: 1700px) {
+  .hero-text h1 {
+    font-size: var(--fs-h1);
+  }
+  
 }
 
 
