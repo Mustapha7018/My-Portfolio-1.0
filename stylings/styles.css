@@ -25,7 +25,7 @@
 
   --fs-hero: 5rem;
   --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
+  --fs-h2: 2rem;
   --fs-h3: 1.5rem;
   --fs-body: 1.3rem;
 
@@ -58,7 +58,7 @@ body {
 
 .logo a {
   font-family: "Prata", serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--clr-light);
   text-decoration: none;
@@ -83,19 +83,19 @@ body {
 .nav {
   inset: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem 3rem;
 }
 
 .small-nav {
-  height: 100px;
+  height: 70px;
 }
 
 .nav__icons a {
   color: var(--clr-light);
   padding-left: 1em;
-  font-size: var(--fs-body);
+  font-size: 1.2rem;
   transition: color 0.35s;
 }
 
@@ -117,14 +117,14 @@ body {
   color: var(--clr-light);
   transition: color 0.35s;
   font-family: var(--ff-secondary);
-  font-size: var(--fs-body);
+  font-size: 1.2rem;
   cursor: pointer;
   transition: color 0.35s;
 }
 
 @media (max-width: 70em) {
   .logo {
-    margin-top: 0.7rem;
+    margin-top: 1rem;
     max-width: 150px;
   }
 
@@ -166,7 +166,7 @@ body {
     border: 0;
     width: 2rem;
     aspect-ratio: 1;
-    top: 2rem;
+    top: 1.5rem;
     right: 2rem;
     cursor: pointer;
   }
@@ -185,6 +185,14 @@ body {
 }
 
 
+@media (max-width: 1120px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
 
 /* HERO SECTION */
 .hero__section {
@@ -192,11 +200,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  padding: 0 10%;
+  padding: 0 4%;
   background-color: var(--clr-dark);
 }
 
-.hero-text h1 {
+.hero-container h1 {
   font-family: var(--ff-primary-2);
   font-size: var(--fs-hero);
   font-weight: var(--fw-bold);
@@ -205,12 +213,37 @@ body {
   line-height: 1.5;
 }
 
-.hero-text > p {
+.hero-container > p {
   font-family: var(--ff-secondary);
   font-size: var(--fs-h2);
   color: var(--clr-light);
   width: 500px;
 }
+
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-container h1{
+  animation: slideInFromLeft 1s ease-out;
+}
+
+.hero-container > p {
+  animation: slideInFromLeft 1.5s ease-out;
+}
+
+.svg-wrapper {
+  animation: slideInFromLeft 1.7s ease-out;
+}
+
 
 .my-image {
   width: 50vw;
@@ -258,12 +291,51 @@ body {
   stroke-dasharray: 760;
 }
 
-/* Media queries */
-@media (max-width: 1700px) {
-  .hero-text h1 {
-    font-size: var(--fs-h1);
+
+
+@media only screen and (max-width: 1304px) {
+  .hero-container h1 {
+    font-size: 4rem;
   }
-  
+
+  .hero-container > p {
+    font-size: 1.7rem;
+  }
+}
+
+
+@media only screen and (max-width: 1128px) {
+  .my-image {
+    display: block;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+
+  .hero-container h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero-container > p {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 300px;
+  }
+
+  .my-image {
+    display: none;
+  }
+}
+
+@media (max-width: 530px) {
+  .hero__section .hero-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 
@@ -318,6 +390,9 @@ body {
 
 .about-text p {
   margin-top: 40px;
+  font-family: var(--ff-primary-1);
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .big-s {
@@ -444,27 +519,6 @@ body {
   opacity: 0.85;
 }
 
-.service-item:before {
-  content: attr(title);
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 10px;
-  background-color: white;
-  border: 2px solid red;
-  border-radius: 50%;
-  white-space: nowrap;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.service-item:hover::before {
-  visibility: visible;
-  opacity: 1;
-}
-
 @media screen and (max-width: 1309px) {
   .services-container {
     grid-template-columns: repeat(2, 1fr);
@@ -559,15 +613,30 @@ body {
   font-size: 2rem;
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   :root {
     --marquee-width: 100vw;
     --marquee-height: 16vh;
-    --marquee-elements-displayed: 3;
   }
-  .marquee::before,
-  .marquee::after {
-    width: 5rem;
+
+
+  .skillset__section {
+    padding: 2rem;
+  }
+
+  .marquee-content img {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .marquee-content .tech-stack {
+    font-size: 1.4rem;
+    margin-right: 2rem;
+  }
+
+  .marquee-content li img {
+    font-size: .8rem;
   }
 }
 
@@ -577,13 +646,11 @@ body {
   scroll-margin-top: 80px;
 }
 
-/* Work Container */
 .work-container {
   max-width: 1150px;
   margin: 0 auto;
 }
 
-/* Work Header */
 .work-header {
   text-align: center;
   margin-bottom: 80px;
@@ -592,8 +659,9 @@ body {
 }
 
 .work-header p {
-  font-size: 24px;
+  font-size: 1.2rem;
   color: #888;
+  font-family: var(--ff-primary-1);
 }
 
 /* Work Grid */
@@ -653,6 +721,32 @@ body {
 }
 
 
+@media screen and (max-width: 1309px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+
+  .work-item img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .work-grid {
+    padding: 5rem 2rem 7rem 2rem;
+    grid-template-columns: repeat(1, minmax(250px, 100%));
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .work-grid {
+    padding: 2rem;
+  }
+}
+
+
 /* CONTACT SECTION */
 #contact {
   background-color: #F3F1EF;
@@ -661,17 +755,89 @@ body {
   margin: 0 auto;
 }
 
-.contact-container h1 {
-  font-size: 3rem;
+#contact h2 {
+  font-size: var(--fs-h1);
   font-family: var(--ff-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.contact-info h3 {
+.contact-container {
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+.contact-info ul li i {
+  padding-right: 1rem;
+}
+
+
+.contact-info ul li span {
+  font-family: var(--ff-primary-1);
+}
+
+.contact-info,
+.contact-form {
+  width: 45%; 
+  padding: 1rem;
+}
+
+.contact-form .form-group {
+  margin-bottom: 1rem; 
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem; 
+  font-family: var(--ff-primary-1);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%; 
+  padding: 0.5rem;
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--clr-dark); 
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #222;
+}
+
+
+.contact-info {
+  width: 40%;
+  
+}
+
+.contact-form {
+  width: 55%; 
+}
+
+
+.contact-info h3, h4 {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--ff-primary-1);
 }
 
 .contact-info ul {
@@ -680,16 +846,211 @@ body {
 }
 
 .contact-info ul li {
-  margin-bottom: 2rem;
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 1rem;
+}
+
+.contact-info ul li a i {
+  margin-right: 1rem;
+  margin-top: .8rem;
+}
+
+.contact-info ul li a i:hover {
+  color: #222;
+}
+
+.social-media {
+  display: flex;
 }
 
 .social-media li {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .social-media li i {
   color: #0b0b0b;
+}
+
+
+
+@media (max-width: 768px) {
+  #contact {
+    padding: 2rem;
+  }
+
+  #contact h1 {
+    font-size: 2rem;
+    font-family: var(--ff-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-info,
+  .contact-form {
+    width: 100%;
+    max-width: 600px; 
+    padding: 1rem;
+  }
+  
+  .contact-info ul li {
+    margin-bottom: 1rem;
+  }
+
+  
+  .contact-info ul li i {
+    font-size: 1rem;
+  }
+
+  .contact-form .form-group .half {
+    width: 100%; 
+  }
+}
+
+/* FOOTER SECTION  */
+.footer__section {
+  background-color: var(--clr-dark);
+  padding: 5rem;
+  scroll-margin-top: 80px;
+  margin: 0 auto;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--ff-primary-1);
+}
+
+.footer-icons ul li {
+  list-style: none;
+  color: var(--clr-light);
+}
+
+
+.footer-icons ul li i {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+
+.footer-logo {
+  text-align: center;
+}
+
+
+.footer-logo .footer-links ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 1.3rem;
+  padding: 1.5rem;
+}
+
+
+.footer-logo .footer-links ul li i {
+  color: var(--clr-light);
+
+}
+
+
+.footer-logo .footer-links ul li i:hover {
+  color: var(--clr-accent-1);
+}
+
+
+.footer-logo h3 {
+  font-family: var(--ff-primary-1);
+  font-size: 1.5rem;
+  color: var(--clr-accent-1);
+  letter-spacing: .1rem;
+}
+
+
+.footer-message {
+  color: var(--clr-light);
+}
+
+
+.footer-message p {
+  margin-bottom: 1rem;
+}
+
+.footer-message form input {
+  background: transparent;
+  border: 1px solid var(--clr-light);
+  width: 200px;
+  height: 30px;
+  color: var(--clr-light);
+}
+
+
+.footer-message form button {
+  color: var(--clr-dark);
+  background: var(--clr-light);
+  padding: .49rem 1rem;
+  border: none;
+  margin-left: -5px;
+  cursor: pointer;
+
+}
+
+
+@media only screen and (max-width: 1070px) {
+  .footer-icons ul li i,
+  .footer-icons li span
+   {
+    font-size: .8rem;
+  }
+
+
+  .footer-logo h3 {
+    font-size: 1rem;
+  }
+
+
+  .footer-logo .footer-links ul li {
+    font-size: .9rem;
+    padding: 1rem;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+
+  .footer-message {
+    display: none;
+  }
+}
+
+
+
+@media only screen and (max-width: 625px) {
+  .footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column-reverse;
+  }
+
+
+  .footer-logo h3 {
+    padding-bottom: 1rem;
+  }
 }
