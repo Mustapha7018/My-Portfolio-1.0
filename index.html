@@ -76,7 +76,7 @@
             <div class="svg-wrapper">
               <svg height="50px" width="300px" xmlns="http://www.w3.org/2000/svg">
                 <rect class="shape" height="50px" width="300px">
-                  <div class="button-text">LET'S TALK</div>
+                  <div class="button-text"><a href="#contact">LET'S TALK</a></div>
               </svg>
             </div>
         </div>
@@ -105,7 +105,7 @@
           <div class="about-column">
             <div class="about-text" data-aos="fade-up">
               <p>
-                <span class="big-s">A</span>s a web developer, I strive to create user-friendly websites with a personal touch. My passion for technology and creativity has led me to explore the latest web development trends and techniques.I enjoy building custom websites that meet the unique needs of my clients, and I'm always eager to take on new challenges.
+                <span class="big-s">A</span>s a web developer, I strive to create user-friendly websites with a personal touch. My passion for technology and creativity has led me to explore the latest web development trends and techniques. I enjoy building custom websites that meet the unique needs of my clients, and I'm always eager to take on new challenges.
               </p>
               <p>
                 Looking for a web developer who can bring your online vision to life? Look no further! As an experienced web developer, I specialize in creating stunning and user-friendly websites that make a lasting impact.
@@ -185,17 +185,57 @@
     </div>
 
     <div class="work-grid" data-aos="fade-up">
-      <div class="work-item work-item-big"><img src="/images/item-1.jpg" alt=""></div>
+      <div class="work-item work-item-big"><img src="/images/item-1.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
 
-      <div class="work-item work-item-small"><img src="/images/item-2.jpg" alt=""></div>
-      <div class="work-item work-item-small small"><img src="/images/item-7.jpg" alt=""></div>
-      <div class="work-item work-item-small small"><img src="/images/item-7.jpg" alt=""></div>
-      <div class="work-item work-item-small"><img src="/images/item-2.jpg" alt=""></div>
+      <div class="work-item work-item-small"><img src="/images/item-2.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="work-item work-item-small small"><img src="/images/item-7.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="work-item work-item-small small"><img src="/images/item-7.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="work-item work-item-small"><img src="/images/item-2.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
 
-      <div class="work-item work-item-small small"><img src="/images/item-2.jpg" alt=""></div>
-      <div class="work-item work-item-small"><img src="/images/item-3.jpg" alt=""></div>
+      <div class="work-item work-item-small small"><img src="/images/item-2.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="work-item work-item-small"><img src="/images/item-3.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
 
-      <div class="work-item work-item-long"><img src="/images/item-5.jpg" alt=""></div>
+      <div class="work-item work-item-long"><img src="/images/item-5.jpg" alt="">
+        <div class="work-overlay">
+          <a href="PREVIEW_LINK_HERE"><i class="fa fa-eye"></i></a>
+          <a href="GITHUB_LINK_HERE"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -222,16 +262,12 @@
             </ul>
           </div>
           <div class="contact-form" data-aos="fade-left">
-            <form>
+            <form action="https://script.google.com/macros/s/AKfycbw5e0PrO2vvasnditYx3z4owWBnz3Zqytn5vOGPSc1kErm1WSZrhXZe1EEyOlYLSKlb/exec" method="post">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
               </div>
               <div class="form-group">
-                <div class="half">
-                  <label for="phone">Phone</label>
-                  <input type="tel" id="phone" name="phone" required>
-                </div>
                 <div class="half">
                   <label for="email">Email</label>
                   <input type="email" id="email" name="email" required>
@@ -245,6 +281,10 @@
             </form>
           </div>
         </div>
+        <button id="scrollToTop" onclick="scrollToTop()" title="Go to top">
+          <i class="fa fa-arrow-up"></i>
+        </button>
+        
       </section>
       
     </main>
